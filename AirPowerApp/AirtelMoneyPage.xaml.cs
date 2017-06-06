@@ -63,11 +63,11 @@ namespace AirPowerApp
                 {
                     MessageBox.Show("Enter Customer Name");
                 }
-                else if (txtPhoneNumber.Text.Equals(String.Empty))
-                {
+                //else if (txtPhoneNumber.Text.Equals(String.Empty))
+                //{
 
-                    MessageBox.Show("Enter Phone Number");
-                }
+                //    MessageBox.Show("Enter Phone Number");
+                //}
                 else if (txtEmail.Text.Equals(String.Empty))
                 {
                     MessageBox.Show("Enter Email");
@@ -86,7 +86,7 @@ namespace AirPowerApp
                 new KeyValuePair<String,String>("item_id","100"),
                 new KeyValuePair<String,String>("customer_name",txtCustname.Text),
                 new KeyValuePair<String,String>("customer_phone",txtPhoneNumber.Text),
-                new KeyValuePair<String,String>("customer_email",txtEmail.Text),
+                new KeyValuePair<String,String>("customer_email",CategoryPage.user),
                 new KeyValuePair<String,String>("wallet_provider","AIRTEL"),
                 new KeyValuePair<String,String>("amount",PartnerPage.amount)
             };
@@ -127,10 +127,10 @@ namespace AirPowerApp
 
                     MessageBox.Show("Enter Phone Number");
                 }
-                else if (txtEmail.Text.Equals(String.Empty))
-                {
-                    MessageBox.Show("Enter Email");
-                }
+                //else if (txtEmail.Text.Equals(String.Empty))
+                //{
+                //    MessageBox.Show("Enter Email");
+                //}
                 else if (txtPhoneNumber.Text.Equals(String.Empty))
                 {
 
@@ -149,7 +149,7 @@ namespace AirPowerApp
                 new KeyValuePair<String,String>("item_id",MediaPage.item_id),
                 new KeyValuePair<String,String>("customer_name",txtCustname.Text),
                 new KeyValuePair<String,String>("customer_phone",txtPhoneNumber.Text),
-                new KeyValuePair<String,String>("customer_email",txtEmail.Text),
+                new KeyValuePair<String,String>("customer_email",CategoryPage.user),
                 new KeyValuePair<String,String>("wallet_provider","AIRTEL")
             };
                     // MessageBox.Show(url);

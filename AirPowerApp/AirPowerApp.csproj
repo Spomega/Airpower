@@ -166,9 +166,15 @@
       <DependentUpon>SearchPanoramaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SimpleJson.cs" />
+    <Compile Include="TigoPaymentPage.xaml.cs">
+      <DependentUpon>TigoPaymentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="VisaPaymentPage.xaml.cs">
       <DependentUpon>VisaPaymentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VodafonePaymentPage.xaml.cs">
+      <DependentUpon>VodafonePaymentPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -260,7 +266,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TigoPaymentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VisaPaymentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VodafonePaymentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -304,6 +318,7 @@
     <Content Include="Images\tileiconmedium.png" />
     <Content Include="Images\tileiconsmall.png" />
     <Content Include="Images\visa.jpg" />
+    <Content Include="Images\vodafone.jpg" />
     <Content Include="Toolkit.Content\appbar.group.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

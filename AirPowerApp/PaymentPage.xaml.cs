@@ -136,6 +136,14 @@ namespace AirPowerApp
             {
                 MessageBox.Show("Select a Payment Option");
             }
+            else if (selectedItem.Equals("Tigo Cash"))
+            {
+                NavigationService.Navigate(new Uri("/TigoPaymentPage.xaml", UriKind.Relative));
+            }
+            else if (selectedItem.Equals("Vodafone Cash"))
+            {
+                NavigationService.Navigate(new Uri("/VodafonePaymentPage.xaml", UriKind.Relative));
+            }
         }
     }
 }

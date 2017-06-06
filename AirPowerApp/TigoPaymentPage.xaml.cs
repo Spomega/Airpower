@@ -11,9 +11,9 @@ using System.Windows.Threading;
 
 namespace AirPowerApp
 {
-    public partial class MtnPaymentPage : PhoneApplicationPage
+    public partial class TigoPaymentPage : PhoneApplicationPage
     {
-        public MtnPaymentPage()
+        public TigoPaymentPage()
         {
             InitializeComponent();
         }
@@ -85,7 +85,7 @@ namespace AirPowerApp
                 new KeyValuePair<String,String>("customer_name",txtCustname.Text),
                 new KeyValuePair<String,String>("customer_phone",txtPhoneNumber.Text),
                 new KeyValuePair<String,String>("customer_email",CategoryPage.user),
-                new KeyValuePair<String,String>("wallet_provider","MTN"),
+                new KeyValuePair<String,String>("wallet_provider","TIGO"),
                 new KeyValuePair<String,String>("amount",PartnerPage.amount)
             };
                     // MessageBox.Show(url);
@@ -198,12 +198,12 @@ namespace AirPowerApp
                 new KeyValuePair<String,String>("customer_name",txtCustname.Text),
                 new KeyValuePair<String,String>("customer_phone",txtPhoneNumber.Text),
                 new KeyValuePair<String,String>("customer_email",CategoryPage.user),
-                 new KeyValuePair<String,String>("wallet_provider","MTN")
+                 new KeyValuePair<String,String>("wallet_provider","TIGO")
             };
                     // MessageBox.Show(url);
 
                     String response = await Util.httpHelperPost(url, parameters);
-                    //MessageBox.Show("response " + response);
+                    MessageBox.Show("response " + response);
 
 
                     //when timer elapses
@@ -242,7 +242,7 @@ namespace AirPowerApp
 
             if (returnObject.response_code == 200)
             {
-                MessageBox.Show(returnObject.invoice_description+" Check your library with menu at the bottom for purchased sermon when you are done");
+                MessageBox.Show(returnObject.invoice_description + " Check your library with menu at the bottom for purchased sermon when you are done");
                 //NavigationService.Navigate(new Uri("/LibraryPage.xaml", UriKind.Relative));
             }
             else
@@ -252,7 +252,6 @@ namespace AirPowerApp
 
 
         }
-
 
     }
 }

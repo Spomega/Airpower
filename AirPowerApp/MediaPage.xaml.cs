@@ -19,7 +19,7 @@ namespace AirPowerApp
         public static string price = String.Empty;
         public static string tempprice = String.Empty;
         public static string thumbnail_url = String.Empty;
-        public static string item_id = String.Empty;
+        public static String item_id = String.Empty;
         public static string title = String.Empty;
         public static string type = String.Empty;
         public static bool visited = false;
@@ -43,9 +43,9 @@ namespace AirPowerApp
                 var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(6) };
                 //request server url
                 String url = AirPowerConstants.server_url + AirPowerConstants.GET_ITEMS + "?category_id="+CategoryPage.category+"&email=" + CategoryPage.user;
-                MessageBox.Show("response " + url);
-                String response = await Util.httpHelperGetWithToken(url);
-                MessageBox.Show("response " + response);
+               // MessageBox.Show("response " + url);
+               String response = await Util.httpHelperGetWithToken(url);
+               // MessageBox.Show("response " + response);
 
                 //when timer elapses
                 timer.Tick += delegate
@@ -171,7 +171,7 @@ namespace AirPowerApp
 
          public class Audio
         {
-            public string id { get; set; }
+            public int id { get; set; }
             public string label { get; set; }
             public string description { get; set; }
             public string author { get; set; }
@@ -191,7 +191,7 @@ namespace AirPowerApp
 
         public class Video
         {
-            public string id { get; set; }
+            public int id { get; set; }
             public string label { get; set; }
             public string description { get; set; }
             public string author { get; set; }
@@ -211,7 +211,7 @@ namespace AirPowerApp
 
         public class Pdf
         {
-            public string id { get; set; }
+            public int id { get; set; }
             public string label { get; set; }
             public string description { get; set; }
             public string author { get; set; }
@@ -251,7 +251,7 @@ namespace AirPowerApp
               // MessageBox.Show(" " + selected.preview_url);
                 preview_url = selected.preview_url;
                 thumbnail_url = selected.thumbnail_url;
-                item_id = selected.id;
+                item_id = Convert.ToString(selected.id);
                 title = selected.description;
                 type = selected.type;
 
@@ -279,7 +279,7 @@ namespace AirPowerApp
             {
                 preview_url = selected.preview_url;
                 thumbnail_url = selected.thumbnail_url;
-                item_id = selected.id;
+                item_id = Convert.ToString(selected.id);
                 title = selected.description;
 
             }
@@ -297,7 +297,7 @@ namespace AirPowerApp
             {
                 preview_url = selected.preview_url;
                 thumbnail_url = selected.thumbnail_url;
-                item_id = selected.id;
+                item_id = Convert.ToString(selected.id);
                 title = selected.description;
 
             }

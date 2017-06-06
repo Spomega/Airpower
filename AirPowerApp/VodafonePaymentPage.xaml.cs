@@ -11,9 +11,9 @@ using System.Windows.Threading;
 
 namespace AirPowerApp
 {
-    public partial class MtnPaymentPage : PhoneApplicationPage
+    public partial class VodafonePaymentPage : PhoneApplicationPage
     {
-        public MtnPaymentPage()
+        public VodafonePaymentPage()
         {
             InitializeComponent();
         }
@@ -62,10 +62,10 @@ namespace AirPowerApp
                 {
                     MessageBox.Show("Enter Customer Name");
                 }
-                //else if (txtEmail.Text.Equals(String.Empty))
-                //{
-                //    MessageBox.Show("Enter Email");
-                //}
+                else if (txtToken.Text.Equals(String.Empty))
+                {
+                    MessageBox.Show("Enter Voucher Number");
+                }
                 else if (txtPhoneNumber.Text.Equals(String.Empty))
                 {
 
@@ -84,8 +84,9 @@ namespace AirPowerApp
                 new KeyValuePair<String,String>("item_id","100"),
                 new KeyValuePair<String,String>("customer_name",txtCustname.Text),
                 new KeyValuePair<String,String>("customer_phone",txtPhoneNumber.Text),
+                new KeyValuePair<String,String>("token",txtToken.Text),
                 new KeyValuePair<String,String>("customer_email",CategoryPage.user),
-                new KeyValuePair<String,String>("wallet_provider","MTN"),
+                new KeyValuePair<String,String>("wallet_provider","VODAFONE"),
                 new KeyValuePair<String,String>("amount",PartnerPage.amount)
             };
                     // MessageBox.Show(url);
@@ -175,10 +176,10 @@ namespace AirPowerApp
                 {
                     MessageBox.Show("Enter Customer Name");
                 }
-                //else if (txtEmail.Text.Equals(String.Empty))
-                //{
-                //    MessageBox.Show("Enter Email");
-                //}
+                else if (txtToken.Text.Equals(String.Empty))
+                {
+                    MessageBox.Show("Enter Voucher Number");
+                }
                 else if (txtPhoneNumber.Text.Equals(String.Empty))
                 {
 
@@ -198,12 +199,13 @@ namespace AirPowerApp
                 new KeyValuePair<String,String>("customer_name",txtCustname.Text),
                 new KeyValuePair<String,String>("customer_phone",txtPhoneNumber.Text),
                 new KeyValuePair<String,String>("customer_email",CategoryPage.user),
-                 new KeyValuePair<String,String>("wallet_provider","MTN")
+                new KeyValuePair<String,String>("token",txtToken.Text),
+                new KeyValuePair<String,String>("wallet_provider","VODAFONE")
             };
                     // MessageBox.Show(url);
 
                     String response = await Util.httpHelperPost(url, parameters);
-                    //MessageBox.Show("response " + response);
+                    MessageBox.Show("response " + response);
 
 
                     //when timer elapses
@@ -242,7 +244,7 @@ namespace AirPowerApp
 
             if (returnObject.response_code == 200)
             {
-                MessageBox.Show(returnObject.invoice_description+" Check your library with menu at the bottom for purchased sermon when you are done");
+                MessageBox.Show(returnObject.invoice_description + " Check your library with menu at the bottom for purchased sermon when you are done");
                 //NavigationService.Navigate(new Uri("/LibraryPage.xaml", UriKind.Relative));
             }
             else
@@ -252,7 +254,5 @@ namespace AirPowerApp
 
 
         }
-
-
     }
 }

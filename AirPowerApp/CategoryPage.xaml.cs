@@ -41,7 +41,9 @@ namespace AirPowerApp
               
                 if (!visited)
                 {
+                   // MessageBox.Show("This App Uses Your Your Location To Prevent It From Doing That Switch Off Your Location ");
                     getLocation();
+
                     WaitIndicator.IsVisible = true;
                     var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(6) };
                     //request server url
@@ -50,7 +52,7 @@ namespace AirPowerApp
 
 
                   String response = await Util.httpHelperGetWithToken(url);
-                  MessageBox.Show("response " + response);
+                  //MessageBox.Show("response " + response);
 
                     //when timer elapses
                     timer.Tick += delegate
@@ -107,7 +109,7 @@ namespace AirPowerApp
                     List<TileItem> tileItems = new List<TileItem>();
                     foreach (Category c in returnObject.categories)
                     {
-                        MessageBox.Show("CategoryId " + c.id);
+                       
                         tileItems.Add(new TileItem() { ImageUri = c.thumbnail_url, Title = c.name +"\n"+c.item_count+" Sermon(s)", GroupTag = "Category", CategoryId = c.id });
                     }
 
@@ -329,7 +331,7 @@ namespace AirPowerApp
             {
                 category = item.CategoryId;
                 MediaPage.visited = false;
-                MessageBox.Show("selected " + item.CategoryId);
+              //  MessageBox.Show("selected " + item.CategoryId);
             }
 
             refreshTileList();

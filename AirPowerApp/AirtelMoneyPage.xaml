@@ -39,7 +39,7 @@
 
             <toolkit:PhoneTextBox x:Name="txtCustname" Grid.Row="1" PlaceholderText="              Customer Name" Margin="-5,3,8,0" BorderThickness="0,0,0,3" BorderBrush="#FF1BC83B" Background="{x:Null}"/>
             <toolkit:PhoneTextBox x:Name="txtPhoneNumber" Grid.Row="2" PlaceholderText="              Phone Number" Margin="-5,3,8,0" BorderThickness="0,0,0,3" BorderBrush="#FFEEEEEE" Background="{x:Null}"/>
-            <toolkit:PhoneTextBox x:Name="txtEmail" Grid.Row="3" PlaceholderText="              Customer Email" Margin="-5,3,8,0" BorderThickness="0,0,0,3" BorderBrush="#FFEEEEEE" Background="{x:Null}"/>
+            <toolkit:PhoneTextBox x:Name="txtEmail" Grid.Row="3" PlaceholderText="              Customer Email" Margin="-5,3,8,0" BorderThickness="0,0,0,3" BorderBrush="#FFEEEEEE" Background="{x:Null}"  Visibility="Collapsed"/>
             <Button Content="Pay With Mobile Money" x:Name="btnAirtelPayment" Grid.Row="4" HorizontalAlignment="Left" Margin="-15,26,-14,0"  VerticalAlignment="Top" Width="485" Height="105" Background="#FFEE1D22" Foreground="White" BorderBrush="{x:Null}" Click="btnAirtelPayment_Click"/>
 
         </Grid>
