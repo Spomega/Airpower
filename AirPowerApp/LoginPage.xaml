@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AirPowerApp.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="bg1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <!--<TextBlock Text="Air Power" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF1BC83B"/>
+            <TextBlock Text="Sign In" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF1BC83B"/>-->
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- <Image Source="/Images/photo 4.JPG" Grid.Row="0" />-->
+            <toolkit:PhoneTextBox Name="txtEmail" Grid.Row="1" PlaceholderText="                     Enter  Email" Margin="0,0,3,0"  Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF2EDC13"/>
+            <toolkit:PhonePasswordBox Name="txtPassword" PlaceholderText="                     Enter  Password" Grid.Row="2" Foreground="White" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF2EDC13"/>
+            <!--  <Rectangle HorizontalAlignment="Left" Height="69" Margin="68,165,0,-12" VerticalAlignment="Top" Width="312" RadiusY="21.164" RadiusX="21.164" Grid.Row="4">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE7F3E9" Offset="0"/>
+                        <GradientStop Color="#FF1BC93B" Offset="0.289"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>-->
+            <Button Name="btnSignIn" Content="Sign In" Margin="-7,146,-7,0" Height="104" Width="470" Background="#FF2EDC13" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Grid.Row="4" Foreground="White" Click="btnSignIn_Click" />
+            <TextBlock HorizontalAlignment="Left" Margin="121,15,0,0" TextWrapping="Wrap" Text="Kakra Baiden's" VerticalAlignment="Top" Width="176" FontWeight="Bold" FontSize="24" RenderTransformOrigin="0.252,0.606" FontFamily="Segoe WP Black" Foreground="#FFFBFBFB"/>
+            <TextBlock Foreground="White"  HorizontalAlignment="Left" Margin="78,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="64" Width="85" Height="94" FontFamily="Tahoma">
+            	<Run FontFamily="Microsoft PhagsPa" Text="Air"/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="163,70,0,0" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top" FontSize="64" FontFamily="Gadugi" FontWeight="Bold" Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="68,215,0,0" TextWrapping="Wrap" Text="SIGN IN WITH YOUR EMAIL" VerticalAlignment="Top" Width="300" Height="30" FontFamily="Arial" FontSize="22" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.65,0.5"/>
+            <HyperlinkButton Name="forgotpassword"  Content="Forgot Password?" HorizontalAlignment="Left" Margin="133,29,0,0" Grid.Row="4" VerticalAlignment="Top" Click="forgotpassword_Click"/>
+
+        </Grid>
+
+
+    </Grid>
+
+    <toolkit:WaitCursorService.WaitCursor>
+        <toolkit:WaitCursor x:Name="WaitIndicator" Text="Please wait...Signing in"/>
+    </toolkit:WaitCursorService.WaitCursor>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,87 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AirPowerApp.DefaultPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="bg1.jpg"/>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+  
+        	<TextBlock HorizontalAlignment="Left" Margin="115,35,0,0" TextWrapping="Wrap" Text="Kakra Baiden's" VerticalAlignment="Top" Width="176" FontWeight="Bold" FontSize="24" RenderTransformOrigin="0.252,0.606" FontFamily="Segoe WP Black" Foreground="#FFFBFBFB"/>
+            <TextBlock Foreground="White"  HorizontalAlignment="Left" Margin="69,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="64" Width="85" Height="94" FontFamily="Tahoma">
+        		<Run FontFamily="Microsoft PhagsPa" Text="Air"/>
+        	</TextBlock>
+        	<TextBlock HorizontalAlignment="Left" Margin="154,105,0,0" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top" FontSize="64" FontFamily="Gadugi" FontWeight="Bold" Foreground="White"/>
+            <toolkit:FlipView Name="flpMessage" Grid.Row="2" Margin="0,0,0,133">
+                <TextBlock HorizontalAlignment="Left" Margin="34,138,0,-295"  TextWrapping="Wrap" Height="184" Width="385" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="24" Foreground="White" FontWeight="Bold">
+            		<Run Text="                     It's fun"/>
+            		<Run Text=" "/>
+            		<LineBreak/>
+            		<Run Text=" "/>
+            		<LineBreak/>
+            		<Run Text="Empower your life with sermons"/>
+            		<LineBreak/>
+            		<Run Text="     from"/>
+            		<Run Text=" Kakra Baiden on-the-go."/>
+                </TextBlock>
+                <TextBlock Foreground="#FFFBFBFB" HorizontalAlignment="Left" Margin="34,138,0,-295" TextWrapping="Wrap" VerticalAlignment="Top" Height="184" Width="385" FontFamily="Arial Rounded MT Bold" FontSize="24" FontWeight="Bold">
+                    <Run Text="              It's everywhere"/>
+            		<Run Text=" "/>
+            		<LineBreak/>
+            		<Run Text=" "/>
+            		<LineBreak/>
+            		<Run Text="Stay in tune with God right here "/>
+            		<LineBreak/>
+            		<Run Text="     on your  mobile device"/>
+            		
+                </TextBlock>
+                <TextBlock Foreground="#FFFBFBFB" HorizontalAlignment="Left" Margin="34,138,0,-295" TextWrapping="Wrap" VerticalAlignment="Top" Height="184" Width="385" FontFamily="Arial Rounded MT Bold" FontSize="24" FontWeight="Bold">
+                    <Run Text="               It's easy"/>
+            		<Run Text=" "/>
+            		<LineBreak/>
+            		<Run Text=" "/>
+            		<LineBreak/>
+            		<Run Text="Listen to sermons on any mobile device,anywhere"/>
+            		<LineBreak/>
+            		<!--<Run Text="anywhere"/>-->
+
+                </TextBlock>
+               
+
+            </toolkit:FlipView>
+           
+        </Grid>
+        <Button Content="Get Started, NOW" HorizontalAlignment="Left" Margin="-15,580,-18,-13" Grid.Row="1" Width="513" Background="#FF2EDC13" BorderBrush="{x:Null}" FontSize="26.667" FontFamily="Arial Rounded MT Bold" Click="Button_Click" Foreground="White" FontWeight="Bold"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>
